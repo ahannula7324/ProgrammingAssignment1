@@ -6,8 +6,13 @@
 
 using namespace std;
 
+int rollDice2to12() {
+    return (rand() % 6 + 1) + (rand() % 6 + 1);
+}
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
+    srand(static_cast<unsigned int>(time(nullptr)));
+    //CircularLinkedList<MonopolySpace> board;
     // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
 
 
