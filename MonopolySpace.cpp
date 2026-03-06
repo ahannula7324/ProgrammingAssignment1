@@ -23,15 +23,19 @@ class MonopolySpace {
     }
 
     MonopolySpace(string propertyName, string propertyColor, int value, int rent) {
-
+        this->propertyName = propertyName;
+        this->propertyColor = propertyColor;
+        this->rent = rent;
+        this->value = value;
     }
 
     bool isEqual(MonopolySpace other) {
-
+        return this->propertyName == other.propertyName;
     }
 
     void print() {
-
+        cout << propertyName << " | " << propertyColor << " | $"
+        << value << " | Rent " << rent << endl;
     }
 
 };
