@@ -15,3 +15,12 @@ Issue: When testing MonopolySpace.cpp in my main function, I repeatedly kept get
 Error Message: Compile Time error: "unknown type name 'MonopolySpace'" 
 What I tried: First I tried to see if I was putting something in wrong in main, while testing it. After trying that and MonopolySpace still showing up red, I knew that main had no way of reaching MonopolySpace. Then I just simply added "MonopolySpace.cpp" to the top using #include. 
 Fix: After using #include "MonopolySpace.cpp" it worked and everything ran correctly, meaning my MonopolySpace.cpp class is good to go.
+
+### Entry 3
+Date: 2026-03-07
+Entry Type: Bug Fix
+Task Worked On: In CircularLinkedList.cpp, I needed my Node.cpp class to be connected to it, however it wasn't so I was getting errors in CircularLinkedList.cpp.
+Issue: As I started working on the CircularLinkedList class, I noticed "Node" was underlined in red, and was unrecognized, meaning it was unable to use in the class.
+Error Message: "No template named 'Node'".
+What I tried: I thought this was very similar to the previous bug I had, so I began with trying to #include "CircularLinkedList.cpp" in the Node class. This failed, making me try another possible solution of doing #include "Node.cpp" into my CircularLinkedList class, which finally worked.
+Fix: I used #include "Node.cpp" in my CircularLinkedList class, which made all errors go away, and allowed for me to continue to work on that class.

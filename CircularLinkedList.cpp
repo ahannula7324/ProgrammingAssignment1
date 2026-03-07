@@ -1,22 +1,23 @@
 #include <vector>
+#include "Node.cpp"
 
 template <typename T>
 
 class CircularLinkedList {
     private:
-    // Node<T>* headNode;
-    // Node<T>* tailNode
+    Node<T>* headNode;
+    Node<T>* tailNode;
 
-    // Node <T>* playerNode;
+    Node <T>* playerNode;
 
     int nodeCount;
     int passGoCount;
 
     public:
     CircularLinkedList() {
-        // headNode = nullptr
-        // tailNode = nullptr
-        // playerNode = nullptr
+        headNode = nullptr;
+        tailNode = nullptr;
+        playerNode = nullptr;
 
         nodeCount = 0;
         passGoCount = 0;
