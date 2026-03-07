@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "MonopolySpace.cpp"
 
 using namespace std;
 
@@ -13,6 +14,10 @@ int rollDice2to12() {
 int main() {
     srand(static_cast<unsigned int>(time(nullptr)));
     //CircularLinkedList<MonopolySpace> board;
+
+    MonopolySpace test("Boardwalk", "Blue", 400, 50);
+    test.print();
+
     // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
 
 
