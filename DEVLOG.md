@@ -24,3 +24,13 @@ Issue: As I started working on the CircularLinkedList class, I noticed "Node" wa
 Error Message: "No template named 'Node'".
 What I tried: I thought this was very similar to the previous bug I had, so I began with trying to #include "CircularLinkedList.cpp" in the Node class. This failed, making me try another possible solution of doing #include "Node.cpp" into my CircularLinkedList class, which finally worked.
 Fix: I used #include "Node.cpp" in my CircularLinkedList class, which made all errors go away, and allowed for me to continue to work on that class.
+
+### Entry 4
+Date: 2026-03-08
+Entry Type: Edge Case/Testing Entry
+Task Worked On: movePlayer function in CircularLinkedList.
+Issue: When testing it and running it in main, it wouldn't print the correct thing, and wouldn't tell me how many times I passed go (meaning made a full loop of the nodes). I realized this was because it never tested the edge case of an empty list.
+Error Message: Process finished with exit code 139 (interrupted by signal 11:SIGSEGV)
+What I tried: In movePlayer, I added an if statement to check if the list is empty at the start, simply returning if it is empty.
+Fix: This allowed everything to work accordingly, and made it so the passGoCount would add up when there is nodes, and just return if the list was empty.
+

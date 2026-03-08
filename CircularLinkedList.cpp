@@ -60,6 +60,15 @@ class CircularLinkedList {
     }
 
     void movePlayer(int steps) {
+        if (playerNode == nullptr) {
+            return;
+        }
+        for (int i = 0; i < steps; i++) {
+            if (playerNode == tailNode) {
+                passGoCount++;
+            }
+            playerNode = playerNode -> nextNode;
+        }
 
     }
 

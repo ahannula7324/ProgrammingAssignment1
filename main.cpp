@@ -19,13 +19,12 @@ int main() {
     MonopolySpace test2("Park Place", "Blue", 350, 35);
     MonopolySpace test3("Go", "None", 0, 0);
 
-    vector<MonopolySpace> testAddMany;
-    testAddMany.push_back(test);
-    testAddMany.push_back(test2);
-    testAddMany.push_back(test3);
+    board.addSpace(test);
+    board.addSpace(test2);
+    board.addSpace(test3);
 
-    int num = board.addMany(testAddMany);
-    cout << num << endl;
+    board.movePlayer(6);
+    cout << board.getPassGoCount() << endl;
 
 
 
