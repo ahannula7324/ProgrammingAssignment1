@@ -34,3 +34,12 @@ Error Message: Process finished with exit code 139 (interrupted by signal 11:SIG
 What I tried: In movePlayer, I added an if statement to check if the list is empty at the start, simply returning if it is empty.
 Fix: This allowed everything to work accordingly, and made it so the passGoCount would add up when there is nodes, and just return if the list was empty.
 
+### Entry 5
+Date: 2026-03-08
+Entry Type: Edge Case/Testing Entry
+Task Worked On: clear() function in CircularLinkedList.
+Issue: While testing if my clear function worked, it kept giving me errors, realizing that I was putting it in a infinite loop.
+Error Message: untitled3(53654,0x7ff850efcfc0) malloc: *** error for object 0x600002794200: pointer being freed was not allocated, untitled3(53654,0x7ff850efcfc0) malloc: *** set a breakpoint in malloc_error_break to debug
+What I tried: First I was confused, and realized I also left out a test case if the board is already cleared, so I added a check for that, and found the same error to occur. I then realized I never checked the tailNode and never set it equal to nullptr, and found that to be the main problem causing the infinite loop.
+Fix: After adding the check to make sure it looks if tailNode is pointing to something, then changes it to nullptr if it is, everything ran properly and the loop stopped being infinite.
+

@@ -77,10 +77,40 @@ class CircularLinkedList {
     }
 
     void printFromPlayer(int count) {
+        if (playerNode == nullptr) {
+            return;
+        }
+        Node<T>* currentNode = playerNode;
+
+        for (int i = 0; i < count; i++) {
+            currentNode -> data.print();
+            currentNode = currentNode -> nextNode;
+        }
 
     }
 
     void clear() {
+        if (headNode == nullptr) {
+            return;
+        }
+        if (tailNode != nullptr) {
+            tailNode -> nextNode = nullptr;
+        }
+
+        Node<T>* currentNode = playerNode;
+
+        while (currentNode) {
+            Node<T>* temp = currentNode;
+            currentNode = currentNode -> nextNode;
+            delete temp;
+        }
+        headNode = nullptr;
+        tailNode = nullptr;
+        playerNode = nullptr;
+        nodeCount = 0;
+        passGoCount = 0;
+
+        cout << "Board has been Cleared" << endl;
 
     }
 };

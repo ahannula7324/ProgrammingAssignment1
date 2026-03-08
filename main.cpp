@@ -23,8 +23,9 @@ int main() {
     board.addSpace(test2);
     board.addSpace(test3);
 
-    board.movePlayer(6);
-    cout << board.getPassGoCount() << endl;
+    board.printFromPlayer(1);
+
+    board.clear();
 
 
 
