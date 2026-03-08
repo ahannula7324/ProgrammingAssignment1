@@ -1,5 +1,6 @@
 #include <vector>
 #include "Node.cpp"
+#include "MonopolySpace.cpp"
 
 template <typename T>
 
@@ -24,10 +25,37 @@ class CircularLinkedList {
     }
 
     bool addSpace(T value) {
+        if (nodeCount == MAX_SPACES) {
+            return false;
+        }
+        Node<T>* newNode = new Node<T>(value);
+
+        if (headNode == nullptr) {
+            headNode = newNode;
+            tailNode = newNode;
+            playerNode = newNode;
+            newNode -> nextNode = headNode;
+        } else {
+            tailNode -> nextNode = newNode;
+            tailNode = newNode;
+            tailNode -> nextNode = headNode;
+        }
+        nodeCount++;
+        return true;
 
     }
 
     int addMany(std::vector<T>  values) {
+        int count = 0;
+
+        for (int i = 0; i < values.size(); i++) {
+            if (nodeCount == MAX_SPACES) {
+                break;
+            }
+            addSpace(values[i]);
+            count++;
+        }
+        return count;
 
     }
 
