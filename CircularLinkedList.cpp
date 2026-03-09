@@ -89,6 +89,24 @@ class CircularLinkedList {
 
     }
 
+    int countSpaces() {
+        if (headNode == nullptr) {
+            return 0;
+        }
+
+        int count = 0;
+        Node<T>* currentNode = headNode;
+
+        while (true) {
+            count += 1;
+            currentNode = currentNode -> nextNode;
+            if (currentNode == headNode) {
+                break;
+            }
+        }
+        return count;
+    }
+
     void clear() {
         if (headNode == nullptr) {
             return;
@@ -97,7 +115,7 @@ class CircularLinkedList {
             tailNode -> nextNode = nullptr;
         }
 
-        Node<T>* currentNode = playerNode;
+        Node<T>* currentNode = headNode;
 
         while (currentNode) {
             Node<T>* temp = currentNode;

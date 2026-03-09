@@ -43,3 +43,11 @@ Error Message: untitled3(53654,0x7ff850efcfc0) malloc: *** error for object 0x60
 What I tried: First I was confused, and realized I also left out a test case if the board is already cleared, so I added a check for that, and found the same error to occur. I then realized I never checked the tailNode and never set it equal to nullptr, and found that to be the main problem causing the infinite loop.
 Fix: After adding the check to make sure it looks if tailNode is pointing to something, then changes it to nullptr if it is, everything ran properly and the loop stopped being infinite.
 
+### Entry 6
+Date: 2026-03-08
+Entry Type: Engineering Decision
+Task Worked On: I decided that I am gonna manually input every space from the actual Monopoly game into a vector, then add those all using addMany in CircularLinkedList.
+Decision: I figured this will be more legit, and simpler for me to keep track of everything because I am using the actual game board. Instead of importing something or creating a new game board, I know the Monopoly board the best, and trust myself manually writing everything.
+Error Message: N/a
+What I tried: Simply adding each space (such as Boardwalk) to the board, until I reach all 40 spaces.
+Fix: N/a.
