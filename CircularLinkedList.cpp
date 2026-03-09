@@ -89,6 +89,67 @@ class CircularLinkedList {
 
     }
 
+    bool removeByName(string name) {
+        if (headNode == nullptr) {
+            return false;
+        }
+        Node<T>* currentNode = headNode;
+        Node<T>* previousNode = tailNode;
+
+        while (currentNode != nullptr) {
+
+            if (currentNode -> data.propertyName == name) {
+                if (currentNode == headNode) {
+                    headNode = headNode -> nextNode;
+                    tailNode -> nextNode = headNode;
+                    delete currentNode;
+                }
+                else if (currentNode == tailNode) {
+                    previousNode -> nextNode = headNode;
+                    delete tailNode;
+                    tailNode = previousNode;
+                }
+                else if (nodeCount == 1) {
+                    delete currentNode;
+                    headNode = nullptr;
+                    tailNode = nullptr;
+                    playerNode = nullptr;
+                }
+                else {
+                    previousNode -> nextNode = currentNode -> nextNode;
+                    delete currentNode;
+                }
+                if (playerNode == currentNode) {
+                    playerNode = currentNode;
+                }
+                nodeCount--;
+                return true;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode -> nextNode;
+            if (currentNode == headNode) {
+                break;
+            }
+        }
+        return false;
+    }
+
+    vector<string> findByColor(string color) {
+        vector<string> finalList;
+        if (headNode == nullptr) {
+            return finalList;
+        }
+        Node<T>* currentNode = headNode;
+
+        for (int i = 0; i < nodeCount; i++) {
+            if (currentNode -> data.propertyName == color) {
+                finalList.push_back(currentNode -> data.propertyName);
+            }
+            currentNode = currentNode -> nextNode;
+        }
+        return finalList;
+    }
+
     int countSpaces() {
         if (headNode == nullptr) {
             return 0;

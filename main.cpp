@@ -72,23 +72,19 @@ int main() {
     board.addMany((List4));
 
 
-    board.movePlayer(4);
-    int count = board.countSpaces();
-    cout << count << endl;
 
-
-    /*
     for (int turn = 1; turn <= 10; turn++) {
         int roll = rollDice2to12();
-        cout << "\nTurn " << turn << " | Rolled: " << roll << endl;
 
+        cout << "\nTurn " << turn << " | Rolled: " << roll << endl;
         board.movePlayer(roll);
+
         cout << "Board view from player (next 5 spaces):" << endl;
         board.printFromPlayer(5);
 
         cout << "Times passed Go: " << board.getPassGoCount() << endl;
     }
-    */
+
 
 
     // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
